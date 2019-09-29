@@ -2,23 +2,86 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Costa Rica Weather</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Mars Weather</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="css/bootstrap-3.4.1.css" rel="stylesheet" type="text/css">
+
 </head>
 
 <body>
   <div class="container-fluid">
-    <div class="jumbotron text-center">
-      <h1>Visit the...</h1>
-      <p>Beach. Rainforest. Volcano. Tree House. Sloths.</p>
+    <div class="jumbotron text-center" style="height: 100%">
+      <h1>Mars Scrape</h1>
+      <p>Scrape me daddy</p>
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
+	<h4 class="heading">{{data_collection.title1}}</h4>
+		<table width="200" border="1">
+ 
     </div>
-    <img src="{{ data_collection.hemisphere_image_urls }}" alt="Sloth">
-    <h2>The typical weather in Costa Rica is:</h2>
+
+    <div class="container col-lg-10">
+		<div class="col-xl-7 coloredbox" style="height: 500px padding-left: 50px">
+		<p class="col-lg-2"></p>
+		<div class="col-lg-5" style="background-color: antiquewhite">
+		  <h1>Current News on Mars</h1>
+			<h3>{{data_collection.news_title1}}</h3>
+    		<p>{{data_collection.info1}}</p>
+		  
+		  <hr>
+		</div>
+	    <img style: "padding-right: 45px" src="{{data_collection.main_img_URL}}" alt="" width="175" height="175" class="text-wrap float-left"/>
+	  
+    </div>
+    <div class="container" style = "background-color: antiquewhite">
+	  <h1>Current Weather on Mars is</h1>
+    
+    <p>{{data_collection.weather}}</p>
+		
+		
+		
+		</div>
+
+</div>
+<div class="container">
+	<h4>Interesting Mars Facts</h4>
+		<h1 style="text-align: center, padding-left: 200px">{{data_collection.facts | safe}}</h1>
+		</div>
+	<div>
+		
+	  <div class="container col-lg-10">
+	   <img src="{{ data_collection.main_image_URL}}" style="width: 50%, height:50%" alt="main-img"> 
+		<div style="padding-left: 40px" class="col-xsm-1"></div>
+    
+	<div style="width: 100px" class="col-xsm-1">	</div>
+    <div class="col-lg-7 coloredbox" style="height: 100%">
+		
+		<h1 style="color: darkcyan">Mars</h1>
+		<h3>scroll over for more info!</h3>
+		<hr>
+		<p style= "padding-left: 65px">
+	    <img src="{{data_collection.img_url1}}" title = "{{data_collection.title1}}" width="250" height="250" alt=""/>
+		<img src="{{data_collection.img_url2}}" title = "{{data_collection.title2}}" width="250" height="250" alt=""/>
+		<img src="{{data_collection.img_url3}}" title = "{{data_collection.title3}}" width="250" height="250" alt=""/>
+		<img src="{{data_collection.img_url4}}" title = "{{data_collection.title4}}" width="250" height="250" alt=""/>
+		
+		
+		
+		
+		
+		</p>
+	
+	
+	
+	</div>
+	<div class="col-xsm-1"></div>
+    
   </div>
+		
+		</div>
+    </div>
   </div>
 </body>
 

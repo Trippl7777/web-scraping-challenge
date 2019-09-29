@@ -335,7 +335,7 @@ url = 'https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2C
 # New Code
 
 def init_browser():
-    executable_path = {"executable_path": "chromedriver"}
+    executable_path = {"executable_path": "chromedriver.exe"}
     return Browser("chrome", **executable_path, headless=False)
 
 def scrape():
@@ -621,9 +621,13 @@ def scrape():
         'title1': title1, 'img_url1': img1_url,
         'title2': title2, 'img_url2': img2_url,
         'title3': title3, 'img_url3': img3_url,
-        'title4': title4, 'img_url4': img4_url
+        'title4': title4, 'img_url4': img4_url,
+        "news_title1": news_title, 'info1': info_p,
+        "main_image_URL": pic_url,
+        "facts": mars_html,
+        "weather": mars_weather
     }
-
+    # news_title and info_p
 
     browser.quit()
     return data_collection

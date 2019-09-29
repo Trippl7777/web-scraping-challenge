@@ -7,22 +7,33 @@ app = Flask(__name__)
 
 # Pass connection to the pymongo instance.
 
+
+
+
 app.config["MONGO_URI"] = "mongodb://localhost:27017/web_scrape"
+
+
 
 
 mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    data_collection = mongo.db.web_scrape.find({"_id":"5d880797cc9386357067e67a","title":"pokemon","img_url":"help"})
-    return render_template("index.html", data_collection=data_collection)
+    # data_collection = mongo.db.web_scrape.find_one()
+    # print(data_collection)
+    # return render_template("index.html", data_collection=data_collection)
+    if (mongo.db.data_collection.find_one() == None):
+        data_collection = mongo.db.data_collection
+    else:
+        data_collection = mongo.db.data_collection.find_one()
+    return render_template('/index.html', data_collection=data_collection)
 
 
 # Route that will trigger the scrape function
 @app.route("/scrape")
 def scraper():
     data = scrape_mars.scrape()
-    mongo.db.collection.insert_one(data)
+    mongo.db.data_collection.insert_one(data)
     #data.update({}, data, upsert=True)
     return redirect("/", code=302)
 
